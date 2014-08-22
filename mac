@@ -105,10 +105,19 @@ brew update
 ### end mac-components/homebrew
 
 fancy_echo "Installing Postgres, a good open source relational database ..."
-  brew_install_or_upgrade 'postgres' '--no-python'
+  brew_install_or_upgrade 'mysql' '--no-python'
 
 fancy_echo "Installing Redis, a good key-value database ..."
   brew_install_or_upgrade 'redis'
+
+fancy_echo "Installing Memcached, a good key-value database ..."
+  brew_install_or_upgrade 'memcached'
+
+fancy_echo "Installing Nginx, a good web proxy ..."
+  brew_install_or_upgrade 'nginx'
+
+fancy_echo "Installing Haproxy, a good web proxy ..."
+  brew_install_or_upgrade 'haproxy'
 
 fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
   brew_install_or_upgrade 'the_silver_searcher'
@@ -122,14 +131,11 @@ fancy_echo "Installing ctags, to index files for vim tab completion of methods, 
 fancy_echo "Installing tmux, to save project state and switch between projects ..."
   brew_install_or_upgrade 'tmux'
 
+fancy_echo "Installing couchdb, really cool document-baded storage ..."
+  brew_install_or_upgrade 'couchdb'
+
 fancy_echo "Installing reattach-to-user-namespace, for copy-paste and RubyMotion compatibility with tmux ..."
   brew_install_or_upgrade 'reattach-to-user-namespace'
-
-fancy_echo "Installing ImageMagick, to crop and resize images ..."
-  brew_install_or_upgrade 'imagemagick'
-
-fancy_echo "Installing QT, used by Capybara Webkit for headless Javascript integration testing ..."
-  brew_install_or_upgrade 'qt'
 
 fancy_echo "Installing watch, to execute a program periodically and show the output ..."
   brew_install_or_upgrade 'watch'
@@ -152,7 +158,7 @@ fancy_echo "Installing NVM, Node.js, and NPM, for running apps and installing Ja
 ### end mac-components/packages
 
 fancy_echo "Starting Postgres ..."
-  brew_launchctl_restart postgresql
+  brew_launchctl_restart mysql
 ### end mac-components/start-services
 
 fancy_echo "Installing rbenv, to change Ruby versions ..."
@@ -238,4 +244,3 @@ fancy_echo "Installing your personal additions from ~/.laptop.local ..."
     source ~/.laptop.local
   fi
 ### end common-components/personal-additions
-
